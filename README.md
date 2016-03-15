@@ -2,6 +2,9 @@
 >![Resize icon][1]    
 >**Siwft Extensions**
 
+##Install:
+    pod 'SwiftyExt'
+
 ##Usage:
 ========
 ###String

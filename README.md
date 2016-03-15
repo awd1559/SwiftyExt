@@ -19,9 +19,9 @@
 - [](#)
 - [](#)
 - [](#)
-	- [String+HTML](#string_html)
-		- [decodeHTML](#decodeHTML)
-		- [encodeHTML_empty](#empty)
+  - [String+HTML](#string_html)
+    - [decodeHTML](#decodeHTML)
+	- [encodeHTML_empty](#empty)
 
 	
 ###String

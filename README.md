@@ -7,21 +7,22 @@
 
 ##Usage:
 ###String
-	[contains](#contains)
-	[between(left, right)](#between)
-	[chompLeft](#chompLeft)
-	[chompRight](#chompRight)
-	[collapseWhitespace](#collapseWhitespace)
-	[hasNumberOf](#hasNumberOf)
-	[](#)
-	[](#)
-	[](#)
-	[](#)
-	[](#)
-	[](#)
-###String+HTML
-	[decodeHTML](#decodeHTML)
-	[encodeHTML_empty](#empty)
+- [contains](#contains)
+- [between(left, right)](#between)
+- [chompLeft](#chompLeft)
+- [chompRight](#chompRight)
+- [collapseWhitespace](#collapseWhitespace)
+- [hasNumberOf](#hasNumberOf)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+	- [String+HTML](#string_html)
+		- [decodeHTML](#decodeHTML)
+		- [encodeHTML_empty](#empty)
+
 	
 ###String
 <span id="between">**between(left, right)**</span>

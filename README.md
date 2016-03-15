@@ -6,67 +6,60 @@
     pod 'SwiftyExt'
 
 ##Usage:
-========
 ###String
-**between(left, right)**
+	[contains](#contains)
+	[between(left, right)](#between)
+	[chompLeft](#chompLeft)
+	[chompRight](#chompRight)
+	[collapseWhitespace](#collapseWhitespace)
+	[hasNumberOf](#hasNumberOf)
+	[](#)
+	[](#)
+	[](#)
+	[](#)
+	[](#)
+	[](#)
+###String+HTML
+	[decodeHTML](#decodeHTML)
+	[encodeHTML_empty](#empty)
+	
+###String
+<span id="between">**between(left, right)**</span>
 ```swift
 "<a>foo</a>".between("<a>", "</a>") // "foo"
 "<a><a>foo</a></a>".between("<a>", "</a>") // "<a>foo</a>"
 "<a>foo".between("<a>", "</a>") // nil
-"Some strings } are very {weird}, dont you think?".between("{", "}") // "weird"
 "<a></a>".between("<a>", "</a>") // nil
  "<a>foo</a>".between("<a>", "<a>") // nil
 ```
 
-**camelize()**
-```swift
-"os version".camelize() // "osVersion"
-"HelloWorld".camelize() // "helloWorld"
-"someword With Characters".camelize() // "somewordWithCharacters"
-"data_rate".camelize() // "dataRate"
-"background-color".camelize() // "backgroundColor"
-```
-
-
-**capitalize()**
-```swift
-"hello world".capitalize() // "Hello World"
-```
-
-**chompLeft(string)**
+<span id="chompLeft">**chompLeft(string)**</span>
 ```swift
 "foobar".chompLeft("foo") // "bar"
 "foobar".chompLeft("bar") // "foo"
 ```
 
-**chompRight(string)**
+<span id="chompRight">**chompRight(string)**</span>
 ```swift
 "foobar".chompRight("bar") // "foo"
 "foobar".chompRight("foo") // "bar"
 ```
 
-**collapseWhitespace()**
+<span id="collapseWhitespace">**collapseWhitespace()**</span>
 ```swift
 "  String   \t libraries are   \n\n\t fun\n!  ".collapseWhitespace() // "String libraries are fun !")
 ```
 
-**contains(substring)**
+<span id="contains">**contains(substring)**</span>
 ```swift
 "foobar".contains("foo") // true
 "foobar".contains("bar") // true
 "foobar".contains("something") // false
 ```
 
-**count(string)**
+<span id="hasNumberOf">**hasNumberOf(string)**</span>
 ```swift
-"hi hi ho hey hihey".count("hi") // 3
-```
-
-**decodeHTML()**
-```swift
-"The Weekend &#8216;King Of The Fall&#8217;".decodeHTML() // "The Weekend ‘King Of The Fall’"
-"<strong> 4 &lt; 5 &amp; 3 &gt; 2 .</strong> Price: 12 &#x20ac;.  &#64; ".decodeHTML() // "<strong> 4 < 5 & 3 > 2 .</strong> Price: 12 €.  @ "
-"this is so &quot;good&quot;".decodeHTML() // "this is so \"good\""
+"hi hi ho hey hihey".hasNumberOf("hi") // 3
 ```
 
 **endsWith(suffix)**
@@ -281,6 +274,12 @@
 ```
 
 
+<span id="decodeHTML">**decodeHTML()**</span>
+```swift
+"The Weekend &#8216;King Of The Fall&#8217;".decodeHTML() // "The Weekend ‘King Of The Fall’"
+"<strong> 4 &lt; 5 &amp; 3 &gt; 2 .</strong> Price: 12 &#x20ac;.  &#64; ".decodeHTML() // "<strong> 4 < 5 & 3 > 2 .</strong> Price: 12 €.  @ "
+"this is so &quot;good&quot;".decodeHTML() // "this is so \"good\""
+```
 
 
 

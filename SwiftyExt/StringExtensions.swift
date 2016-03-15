@@ -24,24 +24,24 @@ public extension String {
 
     }
     
-    // https://gist.github.com/stevenschobert/540dd33e828461916c11
-    func camelize() -> String {
-        let source = clean(with: " ", allOf: "-", "_")
-        if source.characters.contains(" ") {
-            let first = source.substringToIndex(source.startIndex.advancedBy(1))
-            let cammel = NSString(format: "%@", (source as NSString).capitalizedString.stringByReplacingOccurrencesOfString(" ", withString: "", options: [], range: nil)) as String
-            let rest = String(cammel.characters.dropFirst())
-            return "\(first)\(rest)"
-        } else {
-            let first = (source as NSString).lowercaseString.substringToIndex(source.startIndex.advancedBy(1))
-            let rest = String(source.characters.dropFirst())
-            return "\(first)\(rest)"
-        }
-    }
+//    // https://gist.github.com/stevenschobert/540dd33e828461916c11
+//    func camelize() -> String {
+//        let source = clean(with: " ", allOf: "-", "_")
+//        if source.characters.contains(" ") {
+//            let first = source.substringToIndex(source.startIndex.advancedBy(1))
+//            let cammel = NSString(format: "%@", (source as NSString).capitalizedString.stringByReplacingOccurrencesOfString(" ", withString: "", options: [], range: nil)) as String
+//            let rest = String(cammel.characters.dropFirst())
+//            return "\(first)\(rest)"
+//        } else {
+//            let first = (source as NSString).lowercaseString.substringToIndex(source.startIndex.advancedBy(1))
+//            let rest = String(source.characters.dropFirst())
+//            return "\(first)\(rest)"
+//        }
+//    }
     
-    func capitalize() -> String {
-        return capitalizedString
-    }
+//    func capitalize() -> String {
+//        return capitalizedString
+//    }
     
     func contains(substring: String) -> Bool {
         return rangeOfString(substring) != nil
@@ -82,7 +82,7 @@ public extension String {
         return string
     }
     
-    func count(substring: String) -> Int {
+    func hasNumberOf(substring: String) -> Int {
         return componentsSeparatedByString(substring).count-1
     }
     

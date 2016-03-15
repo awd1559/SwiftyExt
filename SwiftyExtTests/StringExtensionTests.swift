@@ -11,18 +11,6 @@ class SwiftStringTests: XCTestCase {
         XCTAssert("<a>foo</a>".between("<a>", "<a>") == nil, "between")
     }
     
-    func testCamelize() {
-        XCTAssert("os version".camelize() == "osVersion")
-        XCTAssert("HelloWorld".camelize() == "helloWorld")
-        XCTAssert("someword With Characters".camelize() == "somewordWithCharacters")
-        XCTAssert("data_rate".camelize() == "dataRate")
-        XCTAssert("background-color".camelize() == "backgroundColor")
-    }
-    
-    func testCapitalize() {
-        XCTAssert("hello world".capitalize() == "Hello World")
-    }
-    
     func testChompLeft() {
         XCTAssert("foobar".chompLeft("foo") == "bar")
         XCTAssert("foobar".chompLeft("bar") == "foo")
@@ -31,10 +19,6 @@ class SwiftStringTests: XCTestCase {
     func testChompRight() {
         XCTAssert("foobar".chompRight("bar") == "foo")
         XCTAssert("foobar".chompRight("foo") == "bar")
-    }
-    
-    func testClean() {
-        XCTAssert("thisoneistwoathreetest".clean(with: " ", allOf: "one", "two", "three") == "this is a test")
     }
     
     func testCollapseWhitespace() {
@@ -47,8 +31,8 @@ class SwiftStringTests: XCTestCase {
         XCTAssert("foobar".contains("something") == false)
     }
     
-    func testCount() {
-        XCTAssert("hi hi ho hey hihey".count("hi") == 3)
+    func testhasNumberOf() {
+        XCTAssert("hi hi ho hey hihey".hasNumberOf("hi") == 3)
     }
     
     func testEndsWith() {
@@ -56,31 +40,10 @@ class SwiftStringTests: XCTestCase {
         XCTAssert("hello world".endsWith("foo") == false)
     }
     
-    func testEnsureLeft() {
-        XCTAssert("/subdir".ensureLeft("/") == "/subdir")
-        XCTAssert("subdir".ensureLeft("/") == "/subdir")
-    }
-    
-    func testEnsureRight() {
-        XCTAssert("subdir/".ensureRight("/") == "subdir/")
-        XCTAssert("subdir".ensureRight("/") == "subdir/")
-    }
-    
     func testIndexOf() {
         XCTAssert("hello".indexOf("hell") == 0)
         XCTAssert("hello".indexOf("lo") == 3)
         XCTAssert("hello".indexOf("world") == nil)
-    }
-    
-    func testInitials() {
-        XCTAssert("First".initials() == "F")
-        XCTAssert("First Last".initials() == "FL")
-        XCTAssert("First Middle1 Middle2 Middle3 Last".initials() == "FMMML")
-    }
-    
-    func testInitialsFirstAndLast() {
-        XCTAssert("First Last".initialsFirstAndLast() == "FL")
-        XCTAssert("First Middle1 Middle2 Middle3 Last".initialsFirstAndLast() == "FL")
     }
     
     func testIsAlpha() {
@@ -120,34 +83,6 @@ class SwiftStringTests: XCTestCase {
         XCTAssert(",".join([]) == "")
         XCTAssert(",".join(["a","b","c"]) == "a,b,c")
         XCTAssert("! ".join(["hey","who are you?"]) == "hey! who are you?")
-    }
-    
-    func testLatinize() {
-        XCTAssert("šÜįéïöç".latinize() == "sUieioc")
-        XCTAssert("crème brûlée".latinize() == "creme brulee")
-    }
-    
-    func testLines() {
-        XCTAssert("test".lines() == ["test"])
-        XCTAssert("test\nsentence".lines() == ["test", "sentence"])
-        XCTAssert("test \nsentence".lines() == ["test ", "sentence"])
-        //Test Carriage return instead of just newlines
-        XCTAssert("test\rsentence".lines() == ["test", "sentence"])
-    }
-
-    func testPad() {
-        XCTAssert("hello".pad(2) == "  hello  ")
-        XCTAssert("hello".pad(1, "\t") == "\thello\t")
-    }
-    
-    func testPadLeft() {
-        XCTAssert("hello".padLeft(10) == "          hello")
-        XCTAssert("what?".padLeft(2, "!") == "!!what?")
-    }
-    
-    func testPadRight() {
-        XCTAssert("hello".padRight(10) == "hello          ")
-        XCTAssert("hello".padRight(2, "!") == "hello!!")
     }
     
     func testStartsWith() {
@@ -228,16 +163,6 @@ class SwiftStringTests: XCTestCase {
         XCTAssert("asdwads".toDouble() == nil)
         XCTAssert("2.00".toDouble() == 2.0)
         XCTAssert("2".toDouble() == 2.0)
-    }
-    
-    func testSlugify() {
-        XCTAssert("Global Thermonuclear Warfare".slugify() == "global-thermonuclear-warfare")
-        XCTAssert("Global Thermonuclear Warfare".slugify(withSeparator: "_") == "global_thermonuclear_warfare")
-        XCTAssert("Crème brûlée".slugify() == "creme-brulee")
-    }
-    
-    func testStripPunctuation() {
-        XCTAssert("My, st[ring] *full* of %punct)".stripPunctuation() == "My string full of punct")
     }
     
     func testSubstring() {

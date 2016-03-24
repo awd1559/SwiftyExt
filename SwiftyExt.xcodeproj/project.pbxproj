@@ -16,6 +16,9 @@
 		CE039CA41C97B76A00A6ABF3 /* DelayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039CA31C97B76A00A6ABF3 /* DelayTests.swift */; };
 		CE039CA71C97B77D00A6ABF3 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039CA51C97B77D00A6ABF3 /* String+HTML.swift */; };
 		CE039CA81C97B77D00A6ABF3 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039CA61C97B77D00A6ABF3 /* StringExtensions.swift */; };
+		CE0731A71CA19048000CC3AF /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0731A61CA19048000CC3AF /* UIImageExtensions.swift */; };
+		CE0731A91CA19070000CC3AF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0731A81CA19070000CC3AF /* UIColorExtension.swift */; };
+		CE89FB791CA0D34300604645 /* MiscExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89FB781CA0D34300604645 /* MiscExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,9 @@
 		CE039CA31C97B76A00A6ABF3 /* DelayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayTests.swift; sourceTree = "<group>"; };
 		CE039CA51C97B77D00A6ABF3 /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		CE039CA61C97B77D00A6ABF3 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		CE0731A61CA19048000CC3AF /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		CE0731A81CA19070000CC3AF /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		CE89FB781CA0D34300604645 /* MiscExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,9 @@
 				CE039C591C979EA200A6ABF3 /* SwiftyExt.h */,
 				CE039C5B1C979EA200A6ABF3 /* Info.plist */,
 				CE039C9D1C97B0D600A6ABF3 /* Delay.swift */,
+				CE89FB781CA0D34300604645 /* MiscExtensions.swift */,
+				CE0731A61CA19048000CC3AF /* UIImageExtensions.swift */,
+				CE0731A81CA19070000CC3AF /* UIColorExtension.swift */,
 			);
 			path = SwiftyExt;
 			sourceTree = "<group>";
@@ -216,7 +225,10 @@
 			files = (
 				CE039CA81C97B77D00A6ABF3 /* StringExtensions.swift in Sources */,
 				CE039C9E1C97B0D600A6ABF3 /* Delay.swift in Sources */,
+				CE0731A71CA19048000CC3AF /* UIImageExtensions.swift in Sources */,
 				CE039CA71C97B77D00A6ABF3 /* String+HTML.swift in Sources */,
+				CE89FB791CA0D34300604645 /* MiscExtensions.swift in Sources */,
+				CE0731A91CA19070000CC3AF /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +417,7 @@
 				CE039C6C1C979EA200A6ABF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE039C6D1C979EA200A6ABF3 /* Build configuration list for PBXNativeTarget "SwiftyExtTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +426,7 @@
 				CE039C6F1C979EA200A6ABF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

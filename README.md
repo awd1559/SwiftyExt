@@ -17,6 +17,7 @@
 - [isAlphaNumberic](#isAlphaNumberic)
 - [isNumberic](#isNumberic)
 - [isEmpty](#isEmpty)
+- [indexAt](#indexAt)
 - [indexOf](#indexOf)
 - [contains](#contains)
 - [hasNumberOf](#hasNumberOf)
@@ -115,6 +116,12 @@
 "\t\t\t ".isEmpty() // true
 "\n\n".isEmpty() // true
 "helo".isEmpty() // false
+```
+
+<span id="indexAt">**indexAt(at)**</span>
+```swift
+"hello".indexAt(3)  //l
+"hello".indexAt(0)  //h
 ```
 
 <span id="indexOf">**indexOf(substring)**</span>

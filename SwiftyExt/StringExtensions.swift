@@ -73,6 +73,11 @@ public extension String {
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).length == 0
     }
     
+    func indexAt(at:Int) -> String {
+        let index = self.startIndex.advancedBy(at)
+        return String(self[index])
+    }
+    
     func indexOf(substring: String) -> Int? {
         if let range = rangeOfString(substring) {
             return startIndex.distanceTo(range.startIndex)

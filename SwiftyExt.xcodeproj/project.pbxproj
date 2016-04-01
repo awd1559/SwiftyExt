@@ -19,6 +19,7 @@
 		CE0731A71CA19048000CC3AF /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0731A61CA19048000CC3AF /* UIImageExtensions.swift */; };
 		CE0731A91CA19070000CC3AF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0731A81CA19070000CC3AF /* UIColorExtension.swift */; };
 		CE89FB791CA0D34300604645 /* MiscExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89FB781CA0D34300604645 /* MiscExtensions.swift */; };
+		CE8DCF3A1CAE5DA900E139DA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CE8DCF391CAE5DA900E139DA /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CE0731A61CA19048000CC3AF /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		CE0731A81CA19070000CC3AF /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CE89FB781CA0D34300604645 /* MiscExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscExtensions.swift; sourceTree = "<group>"; };
+		CE8DCF391CAE5DA900E139DA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		CE039C4C1C979EA200A6ABF3 = {
 			isa = PBXGroup;
 			children = (
+				CE8DCF391CAE5DA900E139DA /* README.md */,
 				CE039C581C979EA200A6ABF3 /* SwiftyExt */,
 				CE039C641C979EA200A6ABF3 /* SwiftyExtTests */,
 				CE039C571C979EA200A6ABF3 /* Products */,
@@ -226,6 +229,7 @@
 				CE039CA81C97B77D00A6ABF3 /* StringExtensions.swift in Sources */,
 				CE039C9E1C97B0D600A6ABF3 /* Delay.swift in Sources */,
 				CE0731A71CA19048000CC3AF /* UIImageExtensions.swift in Sources */,
+				CE8DCF3A1CAE5DA900E139DA /* README.md in Sources */,
 				CE039CA71C97B77D00A6ABF3 /* String+HTML.swift in Sources */,
 				CE89FB791CA0D34300604645 /* MiscExtensions.swift in Sources */,
 				CE0731A91CA19070000CC3AF /* UIColorExtension.swift in Sources */,

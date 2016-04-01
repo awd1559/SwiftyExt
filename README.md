@@ -38,9 +38,20 @@
   - [String+HTML](#StringHTML)
     - [decodeHTML](#decodeHTML)
     - [encodeHTML_empty](#empty)
+
+###UIColor
+- [init](#UIColor1)
+- [init](#UIColor2)
+
 ###GCD
 - [delay](#delay)
 - [cancel](#delay)
+
+###UIImage
+- [roundedCornerImage](#UIImage1)
+
+###Misc
+- [Identifier](#Identifier)
 
 ###String
 <span id="toBool">**toBool()**</span>
@@ -238,6 +249,16 @@
 "this is so &quot;good&quot;".decodeHTML() // "this is so \"good\""
 ```
 
+###UIColor
+<span id="UIColor1">**init(r:g:b:)**</span>
+```swift
+UIColor(r:255, g:0, b:0)
+```
+
+<span id="UIColor2">**init(r:g:b:a)**</span>
+```swift
+UIColor(r:255, g:0, b:0, a:0.5)
+```
 
 ###GCD
 <span id="delay">**delay(timeinterval)**</span>
@@ -248,8 +269,20 @@ let task = delay(5) {
 cancle(task)
 ```
 
+###UIImage
+<span id="UIImage1">**roundedCornerImage**</span>
+```
+//image with rounded corner
+let image = UIImage(named:"ok.png")
+image.roundedCornerImageWithCornerRadius(3.0) 
+```
 
 
+###Misc
+<span id="Identifier">**Identifier**</span>
+```swift
+NSObject.Identifier()
+```
 
 
 	

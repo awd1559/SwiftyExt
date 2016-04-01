@@ -2,16 +2,17 @@ import UIKit
 
 extension UIImage {
     
-    func roundedCornerImageWithCornerRadius(var cornerRadius:CGFloat) -> UIImage {
+    func roundedCornerImage(cornerRadius:CGFloat) -> UIImage {
         
         let w = self.size.width
         let h = self.size.height
+        var radius = cornerRadius
         
-        if cornerRadius < 0 {
-            cornerRadius = 0
+        if radius < 0 {
+            radius = 0
         }
-        if cornerRadius > min(w, h) {
-            cornerRadius = min(w,h)
+        if radius > min(w, h) {
+            radius = min(w,h)
         }
         
         let imageFrame = CGRectMake(0, 0, w, h)

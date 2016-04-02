@@ -2,7 +2,7 @@ import UIKit
 
 extension UIImage {
     
-    func roundedCornerImage(cornerRadius:CGFloat) -> UIImage {
+    func roundedCornerImage(cornerRadius: CGFloat) -> UIImage {
         
         let w = self.size.width
         let h = self.size.height

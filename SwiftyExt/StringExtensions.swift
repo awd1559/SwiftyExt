@@ -1,14 +1,8 @@
-//
-//  SwiftString.swift
-//  SwiftString
-//
-//  Created by Andrew Mayne on 30/01/2016.
-//  Copyright © 2016 Red Brick Labs. All rights reserved.
-//
 
 public extension String {
+    //MARK: - change to value
     func toBool() -> Bool? {
-        let trimmed = self.trimmed().lowercaseString
+        let trimmed = self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).lowercaseString
         if trimmed == "true" || trimmed == "false" {
             return (trimmed as NSString).boolValue
         }
@@ -48,6 +42,7 @@ public extension String {
         return toDate(format)
     }
     
+    //MARK: - is judge
     func isAlpha() -> Bool {
         for chr in characters {
             if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z") ) {
@@ -73,113 +68,19 @@ public extension String {
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).length == 0
     }
     
-    func indexAt(at:Int) -> String {
-        let index = self.startIndex.advancedBy(at)
-        return String(self[index])
+    func isStartsWith(prefix: String) -> Bool {
+        return hasPrefix(prefix)
     }
     
-    func indexOf(substring: String) -> Int? {
-        if let range = rangeOfString(substring) {
-            return startIndex.distanceTo(range.startIndex)
-        }
-        return nil
+    func isEndsWith(suffix: String) -> Bool {
+        return hasSuffix(suffix)
     }
     
     func contains(substring: String) -> Bool {
         return rangeOfString(substring) != nil
     }
     
-    func hasNumberOf(substring: String) -> Int {
-        return componentsSeparatedByString(substring).count-1
-    }
-    
-    func startsWith(prefix: String) -> Bool {
-        return hasPrefix(prefix)
-    }
-    
-    func endsWith(suffix: String) -> Bool {
-        return hasSuffix(suffix)
-    }
-    
-    func between(left: String, _ right: String) -> String? {
-        guard
-            let leftRange = rangeOfString(left), rightRange = rangeOfString(right, options: .BackwardsSearch)
-            where left != right && leftRange.endIndex != rightRange.startIndex
-            else { return nil }
-        
-        return self[leftRange.endIndex...rightRange.startIndex.predecessor()]
-        
-    }
-    
-    func chompLeft(prefix: String) -> String {
-        if let prefixRange = rangeOfString(prefix) {
-            if prefixRange.endIndex >= endIndex {
-                return self[startIndex..<prefixRange.startIndex]
-            } else {
-                return self[prefixRange.endIndex..<endIndex]
-            }
-        }
-        return self
-    }
-    
-    func chompRight(suffix: String) -> String {
-        if let suffixRange = rangeOfString(suffix, options: .BackwardsSearch) {
-            if suffixRange.endIndex >= endIndex {
-                return self[startIndex..<suffixRange.startIndex]
-            } else {
-                return self[suffixRange.endIndex..<endIndex]
-            }
-        }
-        return self
-    }
-    
-    func collapseWhitespace() -> String {
-        let components = componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).filter { !$0.isEmpty }
-        return components.joinWithSeparator(" ")
-    }
-    
-    func trimmedLeft() -> String {
-        if let range = rangeOfCharacterFromSet(NSCharacterSet.whitespaceAndNewlineCharacterSet().invertedSet) {
-            return self[range.startIndex..<endIndex]
-        }
-        return self
-    }
-    
-    func trimmedRight() -> String {
-        if let range = rangeOfCharacterFromSet(NSCharacterSet.whitespaceAndNewlineCharacterSet().invertedSet, options: NSStringCompareOptions.BackwardsSearch) {
-            return self[startIndex..<range.endIndex]
-        }
-        return self
-    }
-    
-    func trimmed() -> String {
-        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-    }
-    
-    func times(n: Int) -> String {
-        return (0..<n).reduce("") { $0.0 + self }
-    }
-    
-    func join<S: SequenceType>(elements: S) -> String {
-        return elements.map{String($0)}.joinWithSeparator(self)
-    }
-    
-    func split(separator: Character) -> [String] {
-        return characters.split{$0 == separator}.map(String.init)
-    }
-    
-    func substring(startIndex: Int, length: Int) -> String {
-        let start = self.startIndex.advancedBy(startIndex)
-        let end = self.startIndex.advancedBy(startIndex + length)
-        return self[start..<end]
-    }
-    
-    var length: Int {
-        get {
-            return self.characters.count
-        }
-    }
-    
+    //MARK: - get substring
     subscript(r: Range<Int>) -> String {
         get {
             let startIndex = self.startIndex.advancedBy(r.startIndex)
@@ -193,5 +94,59 @@ public extension String {
             let index = self.startIndex.advancedBy(i)
             return self[index]
         }
-    }    
+    }
+    
+    func between(left: String, _ right: String) -> String? {
+        guard
+            let leftRange = rangeOfString(left), rightRange = rangeOfString(right, options: .BackwardsSearch)
+            where left != right && leftRange.endIndex != rightRange.startIndex
+            else { return nil }
+        
+        return self[leftRange.endIndex...rightRange.startIndex.predecessor()]
+        
+    }
+    
+    //MARK: - set substring
+    mutating func replace(src:String, with value:String) {
+        let components = componentsSeparatedByString(src)
+        let count = components.count
+        
+        var temp = ""
+        for i in 0..<count-1 {
+            temp += components[i] + value
+        }
+        temp += components[count-1]
+        self = temp
+    }
+    
+    mutating func replace(start:Int, _ end:Int, with value:String) {
+        self.replaceRange(Range(start:self.startIndex.advancedBy(start), end:self.startIndex.advancedBy(end)), with: value)
+    }
+    
+    //MARK: - Misc
+    func times(n: Int) -> String {
+        return (0..<n).reduce("") { $0.0 + self }
+    }
+    
+    func join<S: SequenceType>(elements: S) -> String {
+        return elements.map{String($0)}.joinWithSeparator(self)
+    }
+    
+    func split(separator: Character) -> [String] {
+        return characters.split{$0 == separator}.map(String.init)
+    }
+    
+    static func rangeFromNSRange(nsRange : NSRange) -> Range<Int> {
+        let location = nsRange.location
+        let length = nsRange.length
+        return Range(start: location, end: location+length)
+    }
+    
+    var length: Int {
+        get {
+            return self.characters.count
+        }
+    }
+    
+    
 }

@@ -120,7 +120,7 @@ public extension String {
     }
     
     mutating func replace(start:Int, _ end:Int, with value:String) {
-        self.replaceRange(Range(start:self.startIndex.advancedBy(start), end:self.startIndex.advancedBy(end)), with: value)
+        self.replaceRange(Range(self.startIndex.advancedBy(start)..<self.startIndex.advancedBy(end)), with: value)
     }
     
     //MARK: - Misc
@@ -139,7 +139,7 @@ public extension String {
     static func rangeFromNSRange(nsRange : NSRange) -> Range<Int> {
         let location = nsRange.location
         let length = nsRange.length
-        return Range(start: location, end: location+length)
+        return Range(location..<location+length)
     }
     
     var length: Int {
